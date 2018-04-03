@@ -1,0 +1,5 @@
+wiremockExtensions/bin/**
+wiremockExtensions.jar
+
+# exceptions
+!wiremockExtensions/bin/.gitkeep

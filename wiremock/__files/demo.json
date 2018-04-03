@@ -1,0 +1,27 @@
+[
+  {
+    "code": "item1",
+    "name": "demo item 1",
+    "color": "red"
+  },
+  {
+    "code": "item2",
+    "name": "demo item 2",
+    "color": "green"
+  },
+  {
+    "code": "item3",
+    "name": "demo item 3",
+    "color": "purple"
+  },
+  {
+    "code": "item002",
+    "name": "demo item 002",
+    "color": "blue"
+  },
+  {
+    "code": "item8",
+    "name": "demo item 8",
+    "color": "black"
+  }
+]

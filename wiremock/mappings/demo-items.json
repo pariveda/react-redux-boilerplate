@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/demo-items"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "demo.json",
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json"
+    }
+  }
+}

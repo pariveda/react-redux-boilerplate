@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "next/babel",
+    "es2015"
+  ],
+  "plugins": [
+    [
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "cleanupIDs": false
+            }
+          ]
+        }
+      }
+    ]
+  ]
+}

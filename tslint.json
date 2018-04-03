@@ -1,0 +1,52 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {},
+  // Below we borrow several rules from https://github.com/progre/tslint-config-airbnb
+  // but didn't use that directly because several rules haven't been updated to support tslint 5
+  "rules": {
+    "no-object-literal-type-assertion": false,
+    "no-console": true,
+    "jsx-boolean-value": false,
+    "prefer-const": true, // 2.1, 13.1
+    "no-var-keyword": true, // 2.2
+    "object-literal-shorthand": true, // 3.3, 3.4
+    "object-literal-sort-keys": false,
+    "no-eval": true, // 6.4
+    "ter-prefer-arrow-callback": [true], // 8.1
+    "one-variable-per-declaration": [true, "ignore-for-loop"], // 13.2
+    "triple-equals": [true, "allow-null-check"], // 15.1
+    "comment-format": [true, "check-space"], // 17.3
+    "eofline": true, // 18.5
+    "radix": true, // 21.3
+    "no-construct": true, // 21.3, 21.6
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format", // 22.2
+      "allow-pascal-case"
+    ],
+    "member-access": false,
+    "switch-default": true,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "max-file-line-count": [true, 500],
+    "no-submodule-imports": [
+      true,
+      "components",
+      "helpers",
+      "modules",
+      "redux",
+      "types",
+      "lodash",
+      "next",
+      "styled-components"
+    ],
+    "no-implicit-dependencies": false
+  },
+  "rulesDirectory": []
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es2015", "es2017", "dom.iterable", "scripthost"],
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["app/*", "app/redux/*", "static/*"]
+    },
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [{ "name": "typescript-styled-plugin" }]
+  },
+  "compileOnSave": true,
+  "exclude": ["node_modules", "coverage"]
+}

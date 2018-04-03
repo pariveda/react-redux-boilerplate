@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "react",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true
+  },
+  "include": ["../app/**/*", "../__page_tests__/**/*"]
+}

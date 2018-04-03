@@ -1,0 +1,195 @@
+{
+  // Add snippets here!
+
+  // snippet to automatically implement colors from theme provider
+  "Color Snippets": {
+    "prefix": "clr",
+    "body": ["\\${(props) => props.theme.colors.${1:brandBlue}\\};"],
+    "description": "Quick type colors in styled components with theme provider"
+  },
+
+  "Color Snippets2": {
+    "prefix": "clr2",
+    "body": ["\\${(props) => `${1}\\${props.theme.colors.${2:brandBlue}\\}`\\};"],
+    "description": "Quick type colors in styled components with theme provider"
+  },
+
+  "Function Prop Type Snippet": {
+    "prefix": "fnt",
+    "body": ["(...args: any[]) => ActionReturn | void;"],
+    "description": "Quick insert function prop Type in IProps"
+  },
+
+  "JsDoc Comment Snippet": {
+    "prefix": "jsd",
+    "body": ["/**", " * [${1:optional}] ${2:comment}", " */"],
+    "description": "Quick insert jsDoc comment"
+  },
+
+  "Basic Jest Test Snippet": {
+    "prefix": "bjt",
+    "body": [
+      "import { mountWithTheme } from 'helpers/enzyme-context';",
+      "import { ${1:component} } from './${2:stories}';",
+      "",
+      "describe('${3:TEST_NAME}', () => {",
+      "  it('${4:Renders}', () => expect(mountWithTheme(${5:component})).toMatchSnapshot());",
+      "});",
+      ""
+    ],
+    "description": "Snippet for generating a basic test file"
+  },
+
+  "Basic Jest Page Test Snippet": {
+    "prefix": "bpt",
+    "body": [
+      "// external libraries for helping with test",
+      "import { mountWithTheme } from 'helpers/enzyme-context';",
+      "import initialState from 'initial-state';",
+      "import React from 'react';",
+      "import { Provider } from 'react-redux';",
+      "import WithContext from 'helpers/tests/with-context';",
+      "import configureStore from 'redux-mock-store';",
+      "",
+      "// page to test",
+      "import ${1:COMPONENT} from '${2:path/to/page}';",
+      "",
+      "// create store for testing",
+      "const mockStore = configureStore();",
+      "const store = mockStore(initialState);",
+      "",
+      "// create context & cookies to make Protected Page work",
+      "const context = {",
+      "  pathname: '${3:/path/name}',",
+      "};",
+      "",
+      "const mockCookieData: any = {",
+      "  session: { token: '1234' },",
+      "};",
+      "",
+      "jest.mock('js-cookie', () => ({",
+      "  get(name: string) {",
+      "    return mockCookieData[name];",
+      "  },",
+      "  set(name: string, value: string) {",
+      "    mockCookieData[name] = value;",
+      "  },",
+      "}));",
+      "",
+      "const url = {",
+      "  pathname: context.pathname,",
+      "  query: '',",
+      "};",
+      "",
+      "// create test component (note:  url needs to be passed to anything",
+      "// that extends protected page as a prop",
+      "export const component = (",
+      "  <Provider store={store}>",
+      "    <WithContext context={context}>",
+      "      <${5:COMPONENT} url={url} />",
+      "    </WithContext>",
+      "  </Provider>",
+      ");",
+      "",
+      "describe('${6:TEST} Page', () => {",
+      "  it('Renders', () => expect(mountWithTheme(component)).toMatchSnapshot());",
+      "});",
+      ""
+    ],
+    "description": "Snippet for generating a basic test file for page components"
+  },
+
+  "Simple Storybook Story Snippet": {
+    "prefix": "bss",
+    "body": [
+      "import safeStory from 'helpers/tests/safe-story';",
+      "import React from 'react';",
+      "",
+      "import ${1:MyComponent} from '../${2:path_to_component}';",
+      "",
+      "export const ${3:myComponent} = (",
+      "  <${4:MyComponent} />",
+      ");",
+      "",
+      "safeStory('${5:Story Name}')",
+      "  .add('${6:Sub Category}', () => (",
+      "    ${7:myComponent}",
+      "  ));",
+      ""
+    ],
+    "description": "Snippet for generating a basic storybook file"
+  },
+
+  "Basic React SFC Component": {
+    "prefix": "sfc",
+    "body": [
+      "import React from 'react';",
+      "import styled from 'styled-components';",
+      "",
+      "// interfaces",
+      "import IDefaultProps from 'types/styled-component-props';",
+      "",
+      "interface IProps extends IDefaultProps {",
+      "  /**",
+      "   * [optional] comment",
+      "   */",
+      "  ${2:propName}: ${3:string};",
+      "}",
+      "",
+      "const StyledDiv = styled.div``;",
+      "",
+      "const ${1:ComponentName}: React.SFC<IProps> = (props) => {",
+      "  return (",
+      "    <StyledDiv />",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};",
+      ""
+    ]
+  },
+
+  "Basic Connected React SFC Component": {
+    "prefix": "csfc",
+    "body": [
+      "import React from 'react';",
+      "import { connect } from 'react-redux';",
+      "import { bindActionCreators, Dispatch } from 'redux';",
+      "import styled from 'styled-components';",
+      "",
+      "// interfaces",
+      "import IGlobalState from 'types/global-state';",
+      "import IDefaultProps from 'types/styled-component-props';",
+      "",
+      "interface IProps extends IDefaultProps {",
+      "  /**",
+      "   * [optional] actions",
+      "   */",
+      "  actions: any;",
+      "}",
+      "",
+      "const StyledDiv = styled.div``;",
+      "",
+      "const ${1:ComponentName}: React.SFC<IProps> = (props) => {",
+      "  return (",
+      "    <StyledDiv />",
+      "  );",
+      "};",
+      "",
+      "const mapStateToProps = (state: IGlobalState) => ({});",
+      "",
+      "const mapDispatchToProps = (dispatch: Dispatch<IGlobalState>) => ({",
+      "  actions: bindActionCreators(",
+      "    {},",
+      "    dispatch,",
+      "  ),",
+      "});",
+      "",
+      "export default connect(",
+      "  mapStateToProps,",
+      "  mapDispatchToProps,",
+      ")(${1:ComponentName});",
+      ""
+    ]
+  }
+}

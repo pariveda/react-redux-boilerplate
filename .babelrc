@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    ["styled-components", {
+      "ssr": true
+    }],
+    ["module-resolver", {
+      "root": ["./app", "./app/redux"]
+    }],
+    [
+      "inline-react-svg",
+      {
+        "caseSensitive": true,
+        "svgo": {
+          "plugins": [
+            {
+              "cleanupIDs": false
+            }
+          ]
+        }
+      }
+    ]
+  ]
+}
