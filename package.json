@@ -157,15 +157,12 @@
       "cross-env HEADLESS=false UI_TEST_SPEED=100 yarn test-ui:dev",
     "build": "next build",
     "start": "node .server/server.js",
-    "lint": "tslint -p tslint.json --rules-dir tslint-rules",
     "prettify":
       "prettier --write \"**/*.{ts,tsx,json}\" \"server/*.js\" && yarn lint --fix",
     "veracode-zip": "HSS_ZIP=true yarn build && zip -r veracode .next",
     "doc": "typedoc --mode modules --out doc --ignoreCompilerErrors app",
     "setup-dev-server":
       "yarn install --production=false && yarn lint && yarn rebuild-js && yarn test:coverage --no-cache && yarn build-static-stories && yarn build-server && yarn build && npm prune --production",
-    "precommit": "",
-    "prepush": "yarn build-ts && yarn lint",
     "prod-test":
       "yarn build && yarn build-server && cross-env ASSET_PREFIX=/nhss cross-env NODE_ENV=production yarn start",
     "compile-tslint-rules": "cd tslint-rules && tsc && prettier --write *.js"

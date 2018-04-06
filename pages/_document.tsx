@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>HS ABC Order</title>
+          <title>React Redux Boilerplate</title>
           <link
             rel="stylesheet"
             type="text/css"
