@@ -1,5 +1,9 @@
 **/node_modules
 **/.next
+**/*.js.map
+**/*.js
+**/*.jsx
+**/*.jsx.map
 **/coverage
 **/jest
 **/jest_0
@@ -10,7 +14,14 @@
 **/.jest-cache
 **/.scannerwork
 
+
+**/_ui/
+
+**/*.class
 v8-compile-cache-0
 
+/README
 .DS_Store
 /.svn
+
+/doc
